@@ -1,0 +1,9 @@
+<h1>This is where you'll see all your enemies</h1>
+
+<% @list.enemies.each do |enemy| %>
+  <%= enemy.name %>
+  <%= enemy.grudge %>
+<% end %>
+
+<%= link_to "Edit you list", edit_list_path(@list) %>
+<%= link_to "Back to the index of your lists", lists_path() %>
