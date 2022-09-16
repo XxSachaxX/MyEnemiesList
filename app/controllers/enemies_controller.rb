@@ -1,5 +1,6 @@
 class EnemiesController < ApplicationController
-  before_action :set_list, only: %i[create new]
+  before_action :set_list, only: %i[create new update]
+  before_action :set_enemy, only: %i[edit destroy update]
 
   def new
     @enemy = Enemy.new
@@ -18,8 +19,15 @@ class EnemiesController < ApplicationController
     authorize @enemy
   end
 
+  def edit
+  end
+
+  def update
+    @enemy.update(enemy_params)
+    redirect_to list_path(@list)
+  end
+
   def destroy
-    @enemy = Enemy.find(params[:id])
     @list = @enemy.list
     @enemy.destroy
     redirect_to list_path(@list), status: :see_other
@@ -30,6 +38,10 @@ class EnemiesController < ApplicationController
 
   def set_list
     @list = List.find(params[:list_id])
+  end
+
+  def set_enemy
+    @enemy = Enemy.find(params[:id])
   end
 
   def enemy_params
