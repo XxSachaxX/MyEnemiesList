@@ -10,8 +10,12 @@ class EnemyPolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    true
+  end
+
   def create?
-    record.user == user
+    true
   end
 
   def update?
@@ -19,6 +23,6 @@ class EnemyPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    true
   end
 end

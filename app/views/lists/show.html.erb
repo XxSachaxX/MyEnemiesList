@@ -3,7 +3,12 @@
 <% @list.enemies.each do |enemy| %>
   <%= enemy.name %>
   <%= enemy.grudge %>
+  <%= link_to "Delete",
+    list_enemy_path(@list, enemy),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
 <% end %>
 
 <%= link_to "Edit you list", edit_list_path(@list) %>
-<%= link_to "Back to the index of your lists", lists_path() %>
+<%= link_to "Back to the index of your lists", lists_path %>
+<%= link_to "Add an enemy to your list", new_list_enemy_path(@list) %>
