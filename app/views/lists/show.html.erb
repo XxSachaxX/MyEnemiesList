@@ -7,6 +7,7 @@
     list_enemy_path(@list, enemy),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
+  <%= link_to "Edit your enemy", edit_list_enemy_path(enemy) %>
 <% end %>
 
 <%= link_to "Edit you list", edit_list_path(@list) %>
