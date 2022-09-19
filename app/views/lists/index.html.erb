@@ -1,5 +1,7 @@
 <% @user.lists.each do |list|%>
   <%= link_to list.name, list_path(list) %>
+  <%= link_to "Delete this list", list_path(list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
 
 <%= link_to "Create a new list", new_list_path %>
