@@ -6,19 +6,27 @@ User.destroy_all
 puts "creating 4 users"
 
 puts "Creating user1"
-user1 = User.new(email: "john@test.fr", username: "john", password: "123456")
+user1 = User.new(email: "john@test.fr", username: "John", password: "123456")
+avatar1 = URI.open("https://www.telerama.fr/sites/tr_master/files/styles/simplecrop1000/public/medias/2010/12/media_63445/le-reve-s-est-arrete-a-central-park%2CM45920.jpg?itok=hspwWtDh")
+user1.avatar.attach(io: avatar1, filename: "John Lennon", content_type: "image/png")
 user1.save!
 
 puts "Creating user2"
-user2 = User.new(email: "paul@test.fr", username: "paul", password: "123456")
+user2 = User.new(email: "paul@test.fr", username: "Paul", password: "123456")
+avatar2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Paul_McCartney_Headshot_%28cropped%29.jpg/170px-Paul_McCartney_Headshot_%28cropped%29.jpg")
+user2.avatar.attach(io: avatar2, filename: "Paul McCartney", content_type: "image/png")
 user2.save!
 
 puts "Creating user3"
-user3 = User.new(email: "ringo@test.fr", username: "ringo", password: "123456")
+user3 = User.new(email: "ringo@test.fr", username: "Ringo", password: "123456")
+avatar3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Ringo_Starr_NY_1964.png/200px-Ringo_Starr_NY_1964.png.jpg")
+user3.avatar.attach(io: avatar3, filename: "Ringo Star", content_type: "image/png")
 user3.save!
 
 puts "Creating user3"
-user4 = User.new(email: "george@test.fr", username: "george", password: "123456")
+user4 = User.new(email: "george@test.fr", username: "George", password: "123456")
+avatar4 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Ringo_Starr_NY_1964.png/200px-Ringo_Starr_NY_1964.png.jpg")
+user4.avatar.attach(io: avatar4, filename: "George Harrisson", content_type: "image/png")
 user4.save!
 
 puts "All 4 users created!"
