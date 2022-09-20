@@ -1,5 +1,6 @@
 <%= simple_form_for [@list, @enemy] do |f| %>
   <%= f.input :name %>
   <%= f.input :grudge %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>

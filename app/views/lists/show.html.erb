@@ -3,6 +3,7 @@
 <% @list.enemies.each do |enemy| %>
   <%= enemy.name %>
   <%= enemy.grudge %>
+  <%= cl_image_tag enemy.photo.key, height: 300, width: 400, crop: :fill %>
   <%= link_to "Delete",
     list_enemy_path(@list, enemy),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}

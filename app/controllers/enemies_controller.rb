@@ -45,6 +45,6 @@ class EnemiesController < ApplicationController
   end
 
   def enemy_params
-    params.require(:enemy).permit(:name, :grudge)
+    params.require(:enemy).permit(:name, :grudge, :photo)
   end
 end
